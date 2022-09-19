@@ -1,0 +1,22 @@
+.Message {
+  display: flex;
+  background-color: white;
+  margin: 10px auto;
+  box-shadow: 0 5px 15px -5px rgba(0,0,0,.2);
+  padding: 10px 20px;
+  border-radius: 5px;
+  clear:both;
+
+  &.me {
+    color: white;
+    float: right;
+    background-color: #328ec4;
+  }
+}
+.Name {
+  display: flex;
+  font-size: 10px;
+  margin-top: 10px;
+  margin-left: 20px;
+  opacity: 0.7;
+}
