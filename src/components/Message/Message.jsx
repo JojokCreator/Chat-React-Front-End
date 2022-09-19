@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import "./Message.scss";
+import ReactTextFormat from 'react-text-format';
 
 const Message = ({ message, key, user }) => {
   let body = JSON.parse(message);
@@ -9,7 +10,7 @@ const Message = ({ message, key, user }) => {
     key={key}
     style={(body.user.length === 0) ? {backgroundColor: "green", color: "white", float: "none"}: {display: "flex"}}
     >
-      <div>{body.body}</div>
+      <ReactTextFormat>{body.body}</ReactTextFormat>
       {(body.user) ?
         <div className="Name">
           {body.user}
