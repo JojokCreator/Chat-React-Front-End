@@ -6,8 +6,9 @@ import ChatInput from './components/ChatInput/';
 import { connect, sendMsg } from './api'
 
 function App() {
-  const [user, setUser] = useState()
-  const [chatHistory, setChatHistory] = useState([])
+  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState();
+  const [chatHistory, setChatHistory] = useState([]);
 
   const send = (e) => {
     if (e.keyCode === 13) {
@@ -25,16 +26,19 @@ function App() {
  
   useEffect(() => {
   connect((msg) =>{
-    console.log("New Message")
     setChatHistory([...chatHistory, msg ])
   })
-  console.log(chatHistory)
+  setLoading(false)
   }, [chatHistory])
 
   if (!user) {
     return (
       <ChatInput placeholder={"Enter Name and press enter"} send={login}/>
     )
+  } else if (loading) {
+    return (
+      <div>Loading...</div>
+    );
   }
   return (
     <div className="App">
