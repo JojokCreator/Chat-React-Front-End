@@ -1,16 +1,18 @@
 .Message {
   display: flex;
-  background-color: white;
+  float: left;
+  background-color: #368F8B;
   margin: 10px auto;
   box-shadow: 0 5px 15px -5px rgba(0,0,0,.2);
   padding: 10px 20px;
   border-radius: 5px;
+  color: white;
   clear:both;
 
   &.me {
     color: white;
     float: right;
-    background-color: #328ec4;
+    background-color: #246A73;
   }
 }
 .Name {
